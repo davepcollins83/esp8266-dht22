@@ -53,12 +53,12 @@ void setup(){
 }
 
 void loop(){
-  if (millis() - AWAKE_TIMEOUT > 0){
+  if (millis() > AWAKE_TIMEOUT){
     Serial.println("Work is not finished, but it's time to sleep.");
     rtcData.timeoutCount++;
     goDeepSleep();
   }
-  if (!isRead && millis() - nextRead > 0){
+  if (!isRead && millis() > nextRead){
     Serial.println("Reading...");
 
     /// DHT
@@ -102,14 +102,14 @@ void loop(){
     postStr += String(rtcData.dhtErrorCount);
     postStr +="&field8=";
     postStr += String(vcc);
-    
+
     Serial.println(postStr);
     isRead = true;
     digitalWrite(DHT_PWR_PIN, LOW); // Power off
   }
 
   if (WiFi.status() != WL_CONNECTED){
-    if (millis() - nextWifiReport > 0){
+    if (millis() > nextWifiReport){
       nextWifiReport = millis() + WIFI_PRINT_INTERVAL;
       Serial.print("Connecting WiFi:");
       Serial.println(WIFI_SSID);
@@ -130,9 +130,9 @@ void loop(){
     Serial.print(":");
     Serial.println(TS_PORT);
     if (client.connect(TS_HOST,TS_PORT)){
-      
+
       Serial.print("Sending data...");
-      
+
       client.println("POST /update HTTP/1.1");
       client.print("Host: ");
       client.println(TS_HOST);
@@ -142,7 +142,7 @@ void loop(){
       client.println(postStr.length());
       client.println();
       client.print(postStr);
-      
+
       isConnected = true;
       Serial.println("Done");
     } else {
