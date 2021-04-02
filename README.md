@@ -1,18 +1,19 @@
 # esp8266-dth22-ts
-Mini DIY low-powered weather sensor, ESP8266-01(ESP-01) connected with DHT22 temperature/humidity sensor, that publishes data to Home Assistant using MQTT
-
-
-# UPDATE EVERTHING BELOW THIS LINE
+Mini DIY low-powered greenhouse sensor, ESP8266-01(ESP-01) connected with DHT22 temperature/humidity sensor, that publishes data to Home Assistant using MQTT. I'm rubbish at remembering to water plants, so this has a microswitch which will detect when the greenhouse is opened and alert me if it hasn't been opened for a few days! 
 
 # Requirement
 - ESP-01 Wifi module (or any compatible ESP8266 module)  
 - DHT22 temperature/humidity sensor (or DHT11)  
-- 3.3V Power source  
+- 3.3V Power source
+- Microswitch  
 - Wires, connectors, etc.  
 - Arduino IDE with  
     - Board package: "esp8266" by ESP8266 Community https://github.com/esp8266/Arduino  
     - Library package: "DHT sensor library" by Adafruit (Version 1.2.3) https://github.com/adafruit/DHT-sensor-library/tree/1.2.3  
-- Thingspeak channel  
+- IOT platform with MQTT broker - I'm using Home Assistant https://www.home-assistant.io/ with https://www.home-assistant.io/integrations/mqtt/
+
+
+# UPDATE EVERTHING BELOW THIS LINE
 
 # Instruction
 1. Change Thingspeak API key, Wifi SSID and password.  
