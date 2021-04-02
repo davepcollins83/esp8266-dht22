@@ -1,5 +1,8 @@
 # esp8266-dth22-ts
-Mini DIY low-powered weather sensor, ESP8266-01(ESP-01) connected with DHT22 temperature/humidity sensor, that publish data to ThingSpeak channel.
+Mini DIY low-powered weather sensor, ESP8266-01(ESP-01) connected with DHT22 temperature/humidity sensor, that publishes data to Home Assistant using MQTT
+
+
+# UPDATE EVERTHING BELOW THIS LINE
 
 # Requirement
 - ESP-01 Wifi module (or any compatible ESP8266 module)  
