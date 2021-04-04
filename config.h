@@ -2,10 +2,8 @@
 #define WIFI_PASS "WIFIPASS"
 #define WIFI_PRINT_INTERVAL 500
 
-#define TS_HOST "api.thingspeak.com"
-#define TS_PORT 80
-#define TS_KEY "THINGSPEAKKEY"
-#define TS_INTERVAL 300000
+#define MQTT_BROKER "BROKER IP"
+#define MQTT_PORT 1833  
 
 #define AWAKE_TIMEOUT 20000
 
